@@ -40,12 +40,12 @@ const ChatPage = () => {
     };
   }, []);
   const sendMessage = () => {
-    socket.emit("private message", {
-      receiverId: userId,
-      message: privateMessage,
-      senderId: currentUser._id,
-    });
-    socket.emit("chat message", message);
+    // socket.emit("private message", {
+    //   receiverId: userId,
+    //   message: privateMessage,
+    //   senderId: currentUser._id,
+    // });
+    socket.emit("chat message", message,currentUser._id,userId);
     setMessage("");
   };
 
